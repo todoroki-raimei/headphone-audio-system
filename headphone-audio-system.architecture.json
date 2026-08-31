@@ -6,70 +6,71 @@
     "output": "output.html",
     "visual_preset": "signal-flow",
     "quality_profile": "showcase",
-    "viewBox": [1350, 540],
+    "viewBox": [1350, 760],
     "views": [
-      { "id": "digital-path", "label": "デジタル信号経路", "focus": ["macmini", "hpq", "crs305", "optmod", "red", "spring3"], "note": "Mac miniから光アイソレーションを経てDACに至るデジタル経路" },
-      { "id": "bypass-route", "label": "バイパス経路", "focus": ["macmini", "red"], "note": "Mac miniからREDへLAN直結 (AirPlay2 / Qobuz Connect)" },
+      { "id": "digital-path", "label": "デジタル信号経路", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Mac miniからCRS305を経てHPQOnlyとRED/DACへ分岐するデジタル経路" },
+      { "id": "bypass-route", "label": "バイパス経路", "focus": ["src", "red"], "note": "Qobuz/Apple MusicからREDへ直接受信 (AirPlay2 / Qobuz Connect、Mac miniはコントロールのみ)" },
       { "id": "analog-path", "label": "アナログ出力経路", "focus": ["spring3", "formulas", "powerman", "headphones"], "note": "DACからヘッドホンアンプを経てヘッドホンへ" }
     ]
   },
   "components": [
-    { "id": "src", "type": "external", "label": "Qobuz / Apple Music", "sublabel": "ストリーミングソース", "pos": [15, 15], "size": [130, 75] },
-    { "id": "macmini", "type": "backend", "label": "Mac mini M4 Pro", "sublabel": "Roon Core / HQPlayer 6", "tag": "AC電源", "pos": [170, 10], "size": [145, 85] },
-    { "id": "hpq", "type": "backend", "label": "MINISFORUM Atomman G1 Pro", "sublabel": "HQPlayer 5 Desktop専用機", "tag": "CUDA RTX5060(8GB)/専用AC電源", "pos": [370, 10], "size": [190, 85] },
+    { "id": "src", "type": "external", "label": "Qobuz / Apple Music", "sublabel": "ストリーミングソース", "pos": [30, 60], "size": [160, 90] },
+    { "id": "macmini", "type": "backend", "label": "Mac mini M4 Pro", "sublabel": "Roon Core / HQPlayer 6", "tag": "AC電源", "pos": [320, 50], "size": [180, 110] },
+    { "id": "hpq", "type": "backend", "label": "MINISFORUM Atomman G1 Pro", "sublabel": "HQPlayer 5 Desktop専用機", "tag": "CUDA RTX5060(8GB)/専用AC電源", "pos": [1050, 50], "size": [220, 110] },
 
-    { "id": "crs305", "type": "cloud", "label": "MikroTik CRS305", "sublabel": "SFPスイッチ", "pos": [355, 150], "size": [125, 60] },
-    { "id": "optmod", "type": "cloud", "label": "SONORE opticalModule Deluxe V3", "sublabel": "メディアコンバーター", "tag": "iPower2給電", "pos": [515, 150], "size": [210, 60] },
+    { "id": "crs305", "type": "cloud", "label": "MikroTik CRS305", "sublabel": "SFPスイッチ", "pos": [640, 70], "size": [150, 70] },
+    { "id": "optmod", "type": "cloud", "label": "SONORE opticalModule Deluxe V3", "sublabel": "メディアコンバーター", "tag": "iPower2給電", "pos": [640, 240], "size": [260, 70] },
 
-    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "ネットワークトランスポート (RedOS)", "tag": "NAA/AirPlay2/Qobuz Connect", "pos": [370, 305], "size": [195, 100] },
-    { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "フルディスクリート R2R DAC", "tag": "AET EVO-1302S / PB-350 ハイ", "pos": [610, 285], "size": [185, 140] },
-    { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "ヘッドホンアンプ", "tag": "Class A・BJT・デュアルモノ", "pos": [875, 285], "size": [200, 140] },
-    { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "トロイダル/ディスクリート電源", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [875, 460], "size": [200, 60] },
+    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "ネットワークトランスポート (RedOS)", "tag": "NAA/AirPlay2/Qobuz Connect", "pos": [300, 480], "size": [200, 120] },
+    { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "フルディスクリート R2R DAC", "tag": "AET EVO-1302S / PB-350 ハイ", "pos": [590, 460], "size": [200, 160] },
+    { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "ヘッドホンアンプ", "tag": "Class A・BJT・デュアルモノ", "pos": [860, 460], "size": [210, 160] },
+    { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "トロイダル/ディスクリート電源", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [860, 660], "size": [210, 65] },
 
-    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "9機種を切替使用", "pos": [1140, 285], "size": [190, 140] }
+    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "9機種を切替使用", "pos": [1130, 460], "size": [190, 160] }
   ],
   "boundaries": [
     { "kind": "region", "label": "光アイソレーション層", "wraps": ["crs305", "optmod"] }
   ],
   "connections": [
-    { "id": "src-macmini", "from": "src", "to": "macmini", "label": "インターネット経由", "variant": "emphasis", "labelDy": 61 },
-    { "id": "macmini-hpq", "from": "macmini", "to": "hpq", "label": "LAN", "variant": "emphasis" },
-    { "id": "macmini-red-bypass", "from": "macmini", "to": "red", "label": "LAN直結 (AirPlay2 / Qobuz Connect)", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
-    { "id": "hpq-crs305", "from": "hpq", "to": "crs305", "label": "LAN (FCLF8521P2BTL カッパーSFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
-    { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "光Fiber (FTLF8519P3BNL 光SFP)", "variant": "emphasis", "labelDy": 54 },
+    { "id": "src-macmini", "from": "src", "to": "macmini", "label": "インターネット経由", "variant": "emphasis" },
+    { "id": "macmini-crs305", "from": "macmini", "to": "crs305", "label": "LAN (ルーター経由)", "variant": "emphasis" },
+    { "id": "src-red-bypass", "from": "src", "to": "red", "label": "インターネット直接 (AirPlay2 / Qobuz Connect)", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
+    { "id": "crs305-hpq", "from": "crs305", "to": "hpq", "label": "LAN 双方向 (FCLF8521P2BTL)", "variant": "emphasis" },
+    { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "光Fiber (FTLF8519P3BNL 光SFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "optmod-red", "from": "optmod", "to": "red", "label": "LAN", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
-    { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "labelAt": [760, 250] },
-    { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (SAEC SL-1980)", "variant": "default", "labelDy": -64 },
+    { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "fromSide": "top", "toSide": "top" },
+    { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (SAEC SL-1980)", "variant": "default", "fromSide": "top", "toSide": "top" },
     { "id": "powerman-formulas", "from": "powerman", "to": "formulas", "label": "電源供給", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "straight" },
-    { "id": "formulas-headphones", "from": "formulas", "to": "headphones", "label": "XLR4pin → 4.4mm", "variant": "default", "labelDy": -64 }
+    { "id": "formulas-headphones", "from": "formulas", "to": "headphones", "label": "XLR4pin → 4.4mm", "variant": "default", "fromSide": "top", "toSide": "top" }
   ],
   "cards": [
     { "dot": "slate", "title": "Qobuz / Apple Music", "items": [
-      "Role: ストリーミングソース"
+      "Role: ストリーミングソース",
+      "Output: Mac mini (Internet) / RED直接 (AirPlay2・Qobuz Connect)"
     ] },
     { "dot": "cyan", "title": "Mac mini M4 Pro", "items": [
       "Role: Roon Core / HQPlayer 6 Desktop",
       "Input: Qobuz / Apple Music (Internet)",
-      "Output: LAN (→HPQOnly / RED直結)",
+      "Output: LAN → CRS305経由ルーター",
       "Power: Supplied AC"
     ] },
     { "dot": "cyan", "title": "MINISFORUM Atomman G1 Pro (HPQOnly)", "items": [
       "Role: HQPlayer 5 Desktop専用機",
       "Detail: CUDA処理 RTX 5060 (8GB)",
-      "Input: LAN",
-      "Output: LAN → 光アイソレーション層",
+      "Input/Output: LAN ↔ CRS305 (FCLF8521P2BTL カッパーSFP / 双方向)",
       "Power: Supplied AC (専用回路/別コンセント)"
     ] },
     { "dot": "violet", "title": "光アイソレーション層", "items": [
       "MikroTik CRS305 (SFPスイッチ)",
-      "→ FCLF8521P2BTL (カッパーSFP/RJ45) → HPQOnly",
+      "↔ FCLF8521P2BTL (カッパーSFP/RJ45) ↔ HPQOnly (クラスター外・双方向)",
       "→ FTLF8519P3BNL (光SFP) → 光Fiber → opticalModule",
       "SONORE opticalModule Deluxe V3 (メディアコンバーター / iPower2給電)"
     ] },
     { "dot": "emerald", "title": "Holo Audio RED", "items": [
       "Role: ネットワークトランスポート",
       "Detail: OS RedOS / 対応 NAA HQPlayer・AirPlay2・Qobuz Connect",
-      "Input: LAN (opticalModule経由)",
+      "Input①: LAN (opticalModule経由・NAA経由)",
+      "Input②: インターネット直接 (AirPlay2・Qobuz Connect、Mac miniはコントロールのみ)",
       "Output: I2S (TOP WING Ultra Slim I2S)",
       "Power: KRYNA Acca5-L / PB-350ロー経由"
     ] },
