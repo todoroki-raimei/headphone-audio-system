@@ -25,7 +25,7 @@
           try { theme = localStorage.getItem('archify-theme'); } catch (_) {}
         }
         if (theme !== 'light' && theme !== 'dark') {
-          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          theme = 'dark';
         }
         document.documentElement.setAttribute('data-theme', theme);
       } catch (_) {}
@@ -133,36 +133,36 @@
        root carries data-preset and data-theme directly.
        ========================================================== */
     [data-preset="signal-flow"][data-theme="dark"] {
-      --bg: #030711;
-      --grid: #15233a;
-      --panel: rgba(6, 14, 28, 0.78);
-      --panel-border: #1d3350;
-      --lane-fill: rgba(9, 22, 40, 0.5);
-      --lane-stroke: #2c4564;
-      --text: #f5fbff;
-      --text-muted: #9eb0c7;
-      --text-dim: #52667f;
-      --text-faint: #7890ad;
-      --mask: #07101e;
-      --frontend-fill: rgba(6, 182, 212, 0.14);
-      --frontend-stroke: #67e8f9;
-      --backend-fill: rgba(16, 185, 129, 0.14);
-      --backend-stroke: #5eead4;
-      --database-fill: rgba(139, 92, 246, 0.16);
-      --database-stroke: #c4b5fd;
-      --cloud-fill: rgba(245, 158, 11, 0.13);
-      --cloud-stroke: #fcd34d;
-      --security-fill: rgba(244, 63, 94, 0.13);
-      --security-stroke: #fda4af;
-      --messagebus-fill: rgba(249, 115, 22, 0.13);
-      --messagebus-stroke: #fdba74;
-      --external-fill: rgba(71, 85, 105, 0.24);
-      --external-stroke: #a5b4c7;
-      --arrow: #7890ad;
-      --arrow-emphasis: #2dd4bf;
-      --toolbar-bg: rgba(7, 16, 30, 0.86);
-      --toolbar-border: #29415f;
-      --toolbar-menu-bg: #07101e;
+      --bg: #0b1626;
+      --grid: #23405f;
+      --panel: rgba(13, 26, 46, 0.88);
+      --panel-border: #35577d;
+      --lane-fill: rgba(17, 34, 58, 0.6);
+      --lane-stroke: #416488;
+      --text: #ffffff;
+      --text-muted: #c2d3e8;
+      --text-dim: #86a0bd;
+      --text-faint: #a6bcd6;
+      --mask: #0e1b30;
+      --frontend-fill: rgba(6, 182, 212, 0.26);
+      --frontend-stroke: #8ff2ff;
+      --backend-fill: rgba(16, 185, 129, 0.26);
+      --backend-stroke: #7bffe5;
+      --database-fill: rgba(139, 92, 246, 0.28);
+      --database-stroke: #ddd0ff;
+      --cloud-fill: rgba(245, 158, 11, 0.24);
+      --cloud-stroke: #ffe38a;
+      --security-fill: rgba(244, 63, 94, 0.24);
+      --security-stroke: #ffc4cb;
+      --messagebus-fill: rgba(249, 115, 22, 0.24);
+      --messagebus-stroke: #ffd6a8;
+      --external-fill: rgba(100, 120, 148, 0.38);
+      --external-stroke: #d6e0ef;
+      --arrow: #b0c4de;
+      --arrow-emphasis: #5eeed2;
+      --toolbar-bg: rgba(15, 28, 48, 0.92);
+      --toolbar-border: #416488;
+      --toolbar-menu-bg: #0e1b30;
     }
 
     [data-preset="signal-flow"][data-theme="light"] {
@@ -5732,7 +5732,7 @@
         if (fromUrl) return fromUrl;
         var saved = readStored();
         if (saved === 'light' || saved === 'dark') return saved;
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        return 'dark';
       }
 
       function apply(theme) {
