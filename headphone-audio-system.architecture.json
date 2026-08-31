@@ -6,7 +6,7 @@
     "output": "output.html",
     "visual_preset": "signal-flow",
     "quality_profile": "showcase",
-    "viewBox": [1350, 760],
+    "viewBox": [1320, 760],
     "views": [
       { "id": "digital-path", "label": "デジタル信号経路", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Mac miniからCRS305を経てHPQOnlyとRED/DACへ分岐するデジタル経路" },
       { "id": "bypass-route", "label": "バイパス経路", "focus": ["src", "red"], "note": "Qobuz/Apple MusicからREDへ直接受信 (AirPlay2 / Qobuz Connect、Mac miniはコントロールのみ)" },
@@ -16,17 +16,17 @@
   "components": [
     { "id": "src", "type": "external", "label": "Qobuz / Apple Music", "sublabel": "ストリーミングソース", "pos": [30, 60], "size": [160, 90] },
     { "id": "macmini", "type": "backend", "label": "Mac mini M4 Pro", "sublabel": "Roon Core / HQPlayer 6", "tag": "AC電源", "pos": [320, 50], "size": [180, 110] },
-    { "id": "hpq", "type": "backend", "label": "MINISFORUM Atomman G1 Pro", "sublabel": "HQPlayer 5 Desktop専用機", "tag": "CUDA RTX5060(8GB)/専用AC電源", "pos": [1050, 50], "size": [220, 110] },
+    { "id": "hpq", "type": "backend", "label": "MINISFORUM Atomman G1 Pro", "sublabel": "HQPlayer 5 Desktop専用機", "tag": "CUDA RTX5060(8GB)/専用AC電源", "pos": [950, 50], "size": [220, 110] },
 
     { "id": "crs305", "type": "cloud", "label": "MikroTik CRS305", "sublabel": "SFPスイッチ", "pos": [640, 70], "size": [150, 70] },
     { "id": "optmod", "type": "cloud", "label": "SONORE opticalModule Deluxe V3", "sublabel": "メディアコンバーター", "tag": "iPower2給電", "pos": [640, 240], "size": [260, 70] },
 
-    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "ネットワークトランスポート (RedOS)", "tag": "NAA/AirPlay2/Qobuz Connect", "pos": [300, 480], "size": [200, 120] },
-    { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "フルディスクリート R2R DAC", "tag": "AET EVO-1302S / PB-350 ハイ", "pos": [590, 460], "size": [200, 160] },
-    { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "ヘッドホンアンプ", "tag": "Class A・BJT・デュアルモノ", "pos": [860, 460], "size": [210, 160] },
-    { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "トロイダル/ディスクリート電源", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [860, 660], "size": [210, 65] },
+    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "ネットワークトランスポート (RedOS)", "tag": "NAA/AirPlay2/Qobuz Connect", "pos": [300, 480], "size": [190, 120] },
+    { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "フルディスクリート R2R DAC", "tag": "AET EVO-1302S / PB-350 ハイ", "pos": [570, 460], "size": [200, 160] },
+    { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "ヘッドホンアンプ", "tag": "Class A・BJT・デュアルモノ", "pos": [840, 460], "size": [200, 160] },
+    { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "トロイダル/ディスクリート電源", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [840, 660], "size": [200, 65] },
 
-    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "9機種を切替使用", "pos": [1130, 460], "size": [190, 160] }
+    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "9機種を切替使用", "pos": [1090, 460], "size": [190, 160] }
   ],
   "boundaries": [
     { "kind": "region", "label": "光アイソレーション層", "wraps": ["crs305", "optmod"] }
@@ -51,7 +51,7 @@
     { "dot": "cyan", "title": "Mac mini M4 Pro", "items": [
       "Role: Roon Core / HQPlayer 6 Desktop",
       "Input: Qobuz / Apple Music (Internet)",
-      "Output: LAN → CRS305経由ルーター",
+      "Output: LAN → CRS305 (ルーター経由)",
       "Power: Supplied AC"
     ] },
     { "dot": "cyan", "title": "MINISFORUM Atomman G1 Pro (HPQOnly)", "items": [
@@ -70,11 +70,11 @@
       "Role: ネットワークトランスポート",
       "Detail: OS RedOS / 対応 NAA HQPlayer・AirPlay2・Qobuz Connect",
       "Input①: LAN (opticalModule経由・NAA経由)",
-      "Input②: インターネット直接 (AirPlay2・Qobuz Connect、Mac miniはコントロールのみ)",
+      "Input②: インターネット直接（AirPlay2・Qobuz Connect）",
       "Output: I2S (TOP WING Ultra Slim I2S)",
       "Power: KRYNA Acca5-L / PB-350ロー経由"
     ] },
-    { "dot": "emerald", "title": "Holo Audio Spring 3 KTE", "items": [
+    { "dot": "emerald", "title": "Holo Audio Spring 3 Kitsune Tuned Edition", "items": [
       "Role: フルディスクリート R2R DAC",
       "Detail: PCM/DSD独立回路",
       "Input: I2S (TOP WING Ultra Slim I2S)",
@@ -86,7 +86,7 @@
       "Detail: Class A / フルディスクリートBJT / デュアルモノ",
       "Input: RCA (SAEC SL-1980)",
       "Output: XLR4pin → 4.4mm",
-      "Power: PB-350ハイ経由"
+      "Power: Powerman"
     ] },
     { "dot": "amber", "title": "Powerman (Formula S外部電源)", "items": [
       "Role: 外部電源ユニット",
