@@ -39,7 +39,7 @@
     { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "光Fiber (FTLF8519P3BNL 光SFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "optmod-red", "from": "optmod", "to": "red", "label": "LAN", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "fromSide": "top", "toSide": "top" },
-    { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (SAEC SL-1980)", "variant": "default", "fromSide": "top", "toSide": "top" },
+    { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (Wireworld Eclipse 8)", "variant": "default", "fromSide": "top", "toSide": "top" },
     { "id": "powerman-formulas", "from": "powerman", "to": "formulas", "label": "電源供給", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "straight" },
     { "id": "formulas-headphones", "from": "formulas", "to": "headphones", "label": "XLR4pin → 4.4mm", "variant": "default", "fromSide": "top", "toSide": "top" }
   ],
@@ -78,13 +78,13 @@
       "Role: フルディスクリート R2R DAC",
       "Detail: PCM/DSD独立回路",
       "Input: I2S (TOP WING Ultra Slim I2S)",
-      "Output: RCA (SAEC SL-1980)",
+      "Output: RCA (Wireworld Eclipse 8)",
       "Power: AET EVO-1302S / PB-350ハイ経由"
     ] },
     { "dot": "orange", "title": "XI Audio Formula S", "items": [
       "Role: ヘッドホンアンプ",
       "Detail: Class A / フルディスクリートBJT / デュアルモノ",
-      "Input: RCA (SAEC SL-1980)",
+      "Input: RCA (Wireworld Eclipse 8)",
       "Output: XLR4pin → 4.4mm",
       "Power: Powerman"
     ] },
