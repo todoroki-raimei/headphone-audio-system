@@ -26,7 +26,7 @@
     { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "ヘッドホンアンプ", "tag": "Class A・BJT・デュアルモノ", "pos": [840, 460], "size": [200, 160] },
     { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "トロイダル/ディスクリート電源", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [840, 660], "size": [200, 65] },
 
-    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "9機種を切替使用", "pos": [1090, 460], "size": [190, 160] }
+    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "8機種を切替使用", "pos": [1090, 460], "size": [190, 160] }
   ],
   "boundaries": [
     { "kind": "region", "label": "光アイソレーション層", "wraps": ["crs305", "optmod"] }
@@ -93,9 +93,8 @@
       "Detail: 大型トロイダルトランス / ディスクリートレギュレーション",
       "Power: ZONOTONE 6NPS-3.5 MEISTER / PB-350ハイ経由"
     ] },
-    { "dot": "rose", "title": "ヘッドホン (9機種)", "items": [
+    { "dot": "rose", "title": "ヘッドホン (8機種)", "items": [
       "FOSTEX TH818",
-      "FOSTEX TH919",
       "ASHIDAVOX HA-SX12/HD",
       "Kiwi Ears Ellipse",
       "Simphonio Charm",
