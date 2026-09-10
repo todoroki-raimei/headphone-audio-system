@@ -2,103 +2,104 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "ヘッドホンオーディオシステム構成図",
+    "title": "Home Headphone Audio System",
     "output": "output.html",
+    "locale": "en",
     "visual_preset": "signal-flow",
     "quality_profile": "showcase",
     "viewBox": [1320, 760],
     "views": [
-      { "id": "digital-path", "label": "デジタル信号経路", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Mac miniからCRS305を経てHPQOnlyとRED/DACへ分岐するデジタル経路" },
-      { "id": "bypass-route", "label": "バイパス経路", "focus": ["src", "red"], "note": "Qobuz/Apple MusicからREDへ直接受信 (AirPlay2 / Qobuz Connect、Mac miniはコントロールのみ)" },
-      { "id": "analog-path", "label": "アナログ出力経路", "focus": ["spring3", "formulas", "powerman", "headphones"], "note": "DACからヘッドホンアンプを経てヘッドホンへ" }
+      { "id": "digital-path", "label": "Digital Signal Path", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Digital path from the Mac mini through the CRS305, branching to HPQOnly and the RED/DAC chain" },
+      { "id": "bypass-route", "label": "Bypass Route", "focus": ["src", "red"], "note": "The RED receives Qobuz or Apple Music directly via AirPlay 2 or Qobuz Connect; the Mac mini provides control only" },
+      { "id": "analog-path", "label": "Analog Output Path", "focus": ["spring3", "formulas", "powerman", "headphones"], "note": "Analog path from the DAC through the headphone amplifier to the headphones" }
     ]
   },
   "components": [
-    { "id": "src", "type": "external", "label": "Qobuz / Apple Music", "sublabel": "ストリーミングソース", "pos": [30, 60], "size": [160, 90] },
-    { "id": "macmini", "type": "backend", "label": "Mac mini M4 Pro", "sublabel": "Roon Core / HQPlayer 6", "tag": "AC電源", "pos": [320, 50], "size": [180, 110] },
-    { "id": "hpq", "type": "backend", "label": "MINISFORUM Atomman G1 Pro", "sublabel": "HQPlayer 5 Desktop専用機", "tag": "CUDA RTX5060(8GB)/専用AC電源", "pos": [950, 50], "size": [220, 110] },
+    { "id": "src", "type": "external", "label": "Qobuz / Apple Music", "sublabel": "Streaming Source", "pos": [30, 60], "size": [160, 90] },
+    { "id": "macmini", "type": "backend", "label": "Mac mini M4 Pro", "sublabel": "Roon Core / HQPlayer 6", "tag": "AC Power", "pos": [320, 50], "size": [180, 110] },
+    { "id": "hpq", "type": "backend", "label": "MINISFORUM Atomman G1 Pro", "sublabel": "Dedicated HQPlayer 5 Desktop", "tag": "CUDA RTX 5060 (8GB) / Dedicated AC", "pos": [950, 50], "size": [220, 110] },
 
-    { "id": "crs305", "type": "cloud", "label": "MikroTik CRS305", "sublabel": "SFPスイッチ", "pos": [640, 70], "size": [150, 70] },
-    { "id": "optmod", "type": "cloud", "label": "SONORE opticalModule Deluxe V3", "sublabel": "メディアコンバーター", "tag": "iPower2給電", "pos": [640, 240], "size": [260, 70] },
+    { "id": "crs305", "type": "cloud", "label": "MikroTik CRS305", "sublabel": "SFP Switch", "pos": [640, 70], "size": [150, 70] },
+    { "id": "optmod", "type": "cloud", "label": "SONORE opticalModule Deluxe V3", "sublabel": "Media Converter", "tag": "Powered by iPower2", "pos": [640, 240], "size": [260, 70] },
 
-    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "ネットワークトランスポート (RedOS)", "tag": "NAA/AirPlay2/Qobuz Connect", "pos": [300, 480], "size": [190, 120] },
-    { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "フルディスクリート R2R DAC", "tag": "AET EVO-1302S / PB-350 ハイ", "pos": [570, 460], "size": [200, 160] },
-    { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "ヘッドホンアンプ", "tag": "Class A・BJT・デュアルモノ", "pos": [840, 460], "size": [200, 160] },
-    { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "トロイダル/ディスクリート電源", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [840, 660], "size": [200, 65] },
+    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "Network Transport (RedOS)", "tag": "NAA / AirPlay 2 / Qobuz Connect", "pos": [300, 480], "size": [190, 120] },
+    { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "Fully Discrete R2R DAC", "tag": "AET EVO-1302S / PB-350 High Bank", "pos": [570, 460], "size": [200, 160] },
+    { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "Headphone Amplifier", "tag": "Class A / Discrete BJT / Dual Mono", "pos": [840, 460], "size": [200, 160] },
+    { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "Toroidal / Discrete Power Supply", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [840, 660], "size": [200, 65] },
 
-    { "id": "headphones", "type": "external", "label": "ヘッドホン", "sublabel": "8機種を切替使用", "pos": [1090, 460], "size": [190, 160] }
+    { "id": "headphones", "type": "external", "label": "Headphones", "sublabel": "8 Models", "pos": [1090, 460], "size": [190, 160] }
   ],
   "boundaries": [
-    { "kind": "region", "label": "光アイソレーション層", "wraps": ["crs305", "optmod"] }
+    { "kind": "region", "label": "Optical Isolation Layer", "wraps": ["crs305", "optmod"] }
   ],
   "connections": [
-    { "id": "src-macmini", "from": "src", "to": "macmini", "label": "インターネット経由", "variant": "emphasis" },
-    { "id": "macmini-crs305", "from": "macmini", "to": "crs305", "label": "LAN (ルーター経由)", "variant": "emphasis" },
-    { "id": "src-red-bypass", "from": "src", "to": "red", "label": "インターネット直接 (AirPlay2 / Qobuz Connect)", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
-    { "id": "crs305-hpq", "from": "crs305", "to": "hpq", "label": "LAN 双方向 (FCLF8521P2BTL)", "variant": "emphasis" },
-    { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "光Fiber (FTLF8519P3BNL 光SFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "src-macmini", "from": "src", "to": "macmini", "label": "Internet", "variant": "emphasis" },
+    { "id": "macmini-crs305", "from": "macmini", "to": "crs305", "label": "LAN (via Router)", "variant": "emphasis" },
+    { "id": "src-red-bypass", "from": "src", "to": "red", "label": "Direct Internet (AirPlay 2 / Qobuz Connect)", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
+    { "id": "crs305-hpq", "from": "crs305", "to": "hpq", "label": "LAN ↔ FCLF8521P2BTL", "variant": "emphasis" },
+    { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "Optical Fiber (FTLF8519P3BNL SFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "optmod-red", "from": "optmod", "to": "red", "label": "LAN", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "fromSide": "top", "toSide": "top" },
-    { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (Wireworld Eclipse 8)", "variant": "default", "fromSide": "top", "toSide": "top" },
-    { "id": "powerman-formulas", "from": "powerman", "to": "formulas", "label": "電源供給", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "straight" },
+    { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (Wireworld Silver Eclipse 10)", "variant": "default", "fromSide": "top", "toSide": "top" },
+    { "id": "powerman-formulas", "from": "powerman", "to": "formulas", "label": "Power Supply", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "straight" },
     { "id": "formulas-headphones", "from": "formulas", "to": "headphones", "label": "XLR4pin → 4.4mm", "variant": "default", "fromSide": "top", "toSide": "top" }
   ],
   "cards": [
     { "dot": "slate", "title": "Qobuz / Apple Music", "items": [
-      "Role: ストリーミングソース",
-      "Output: Mac mini (Internet) / RED直接 (AirPlay2・Qobuz Connect)"
+      "Role: Streaming Source",
+      "Output: Mac mini (Internet) / Direct to RED (AirPlay 2 / Qobuz Connect)"
     ] },
     { "dot": "cyan", "title": "Mac mini M4 Pro", "items": [
       "Role: Roon Core / HQPlayer 6 Desktop",
       "Input: Qobuz / Apple Music (Internet)",
-      "Output: LAN → CRS305 (ルーター経由)",
+      "Output: LAN → CRS305 (via Router)",
       "Power: Supplied AC"
     ] },
     { "dot": "cyan", "title": "MINISFORUM Atomman G1 Pro (HPQOnly)", "items": [
-      "Role: HQPlayer 5 Desktop専用機",
-      "Detail: CUDA処理 RTX 5060 (8GB)",
-      "Input/Output: LAN ↔ CRS305 (FCLF8521P2BTL カッパーSFP / 双方向)",
-      "Power: Supplied AC (専用回路/別コンセント)"
+      "Role: Dedicated HQPlayer 5 Desktop Machine",
+      "Detail: CUDA Processing on RTX 5060 (8GB)",
+      "Input/Output: LAN ↔ CRS305 (FCLF8521P2BTL Copper SFP / Bidirectional)",
+      "Power: Supplied AC (Dedicated Circuit / Separate Outlet)"
     ] },
-    { "dot": "violet", "title": "光アイソレーション層", "items": [
-      "MikroTik CRS305 (SFPスイッチ)",
-      "↔ FCLF8521P2BTL (カッパーSFP/RJ45) ↔ HPQOnly (クラスター外・双方向)",
-      "→ FTLF8519P3BNL (光SFP) → 光Fiber → opticalModule",
-      "SONORE opticalModule Deluxe V3 (メディアコンバーター / iPower2給電)"
+    { "dot": "violet", "title": "Optical Isolation Layer", "items": [
+      "MikroTik CRS305 (SFP Switch)",
+      "↔ FCLF8521P2BTL (Copper SFP / RJ45) ↔ HPQOnly (Outside Cluster / Bidirectional)",
+      "→ FTLF8519P3BNL (Optical SFP) → Optical Fiber → opticalModule",
+      "SONORE opticalModule Deluxe V3 (Media Converter / Powered by iPower2)"
     ] },
     { "dot": "emerald", "title": "Holo Audio RED", "items": [
-      "Role: ネットワークトランスポート",
-      "Detail: OS RedOS / 対応 NAA HQPlayer・AirPlay2・Qobuz Connect",
-      "Input①: LAN (opticalModule経由・NAA経由)",
-      "Input②: インターネット直接（AirPlay2・Qobuz Connect）",
+      "Role: Network Transport",
+      "Detail: RedOS / NAA HQPlayer / AirPlay 2 / Qobuz Connect",
+      "Input 1: LAN (via opticalModule / NAA)",
+      "Input 2: Direct Internet (AirPlay 2 / Qobuz Connect)",
       "Output: I2S (TOP WING Ultra Slim I2S)",
-      "Power: KRYNA Acca5-L / PB-350ロー経由"
+      "Power: KRYNA Acca5-L / via PB-350 Low Bank"
     ] },
     { "dot": "emerald", "title": "Holo Audio Spring 3 Kitsune Tuned Edition", "items": [
-      "Role: フルディスクリート R2R DAC",
-      "Detail: PCM/DSD独立回路",
+      "Role: Fully Discrete R2R DAC",
+      "Detail: Independent PCM and DSD Circuits",
       "Input: I2S (TOP WING Ultra Slim I2S)",
-      "Output: RCA (Wireworld Eclipse 8)",
-      "Power: AET EVO-1302S / PB-350ハイ経由"
+      "Output: RCA (Wireworld Silver Eclipse 10)",
+      "Power: AET EVO-1302S / via PB-350 High Bank"
     ] },
     { "dot": "orange", "title": "XI Audio Formula S", "items": [
-      "Role: ヘッドホンアンプ",
-      "Detail: Class A / フルディスクリートBJT / デュアルモノ",
-      "Input: RCA (Wireworld Eclipse 8)",
+      "Role: Headphone Amplifier",
+      "Detail: Class A / Fully Discrete BJT / Dual Mono",
+      "Input: RCA (Wireworld Silver Eclipse 10)",
       "Output: XLR4pin → 4.4mm",
       "Power: Powerman"
     ] },
-    { "dot": "amber", "title": "Powerman (Formula S外部電源)", "items": [
-      "Role: 外部電源ユニット",
-      "Detail: 大型トロイダルトランス / ディスクリートレギュレーション",
-      "Power: ZONOTONE 6NPS-3.5 MEISTER / PB-350ハイ経由"
+    { "dot": "amber", "title": "Powerman (Formula S External Power Supply)", "items": [
+      "Role: External Power Supply Unit",
+      "Detail: Large Toroidal Transformer / Discrete Regulation",
+      "Power: ZONOTONE 6NPS-3.5 MEISTER / via PB-350 High Bank"
     ] },
-    { "dot": "rose", "title": "ヘッドホン (8機種)", "items": [
+    { "dot": "rose", "title": "Headphones (8 Models)", "items": [
       "FOSTEX TH818",
       "ASHIDAVOX HA-SX12/HD",
       "Kiwi Ears Ellipse",
       "Simphonio Charm",
-      "水月雨 Old Fashion",
+      "MOONDROP Old Fashion",
       "final DX4000CL",
       "ZMF Ori 3.0",
       "HiFiMAN HE6 Remastered"
