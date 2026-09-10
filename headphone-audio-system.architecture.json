@@ -40,7 +40,7 @@
     { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "fromSide": "top", "toSide": "top" },
     { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (Wireworld Silver Eclipse 10)", "variant": "default", "fromSide": "top", "toSide": "top" },
     { "id": "powerman-formulas", "from": "powerman", "to": "formulas", "label": "Power Supply", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "straight" },
-    { "id": "formulas-headphones", "from": "formulas", "to": "headphones", "label": "XLR4pin → 4.4mm", "variant": "default", "fromSide": "top", "toSide": "top" }
+    { "id": "formulas-headphones", "from": "formulas", "to": "headphones", "label": "XLR4pin → ddHiFi XLR44B (4.4mm)", "variant": "default", "fromSide": "top", "toSide": "top" }
   ],
   "cards": [
     { "dot": "slate", "title": "Qobuz / Apple Music", "items": [
@@ -85,7 +85,7 @@
       "Role: Headphone Amplifier",
       "Detail: Class A / Fully Discrete BJT / Dual Mono",
       "Input: RCA (Wireworld Silver Eclipse 10)",
-      "Output: XLR4pin → 4.4mm",
+      "Output: XLR4pin → ddHiFi XLR44B (4.4mm)",
       "Power: Powerman"
     ] },
     { "dot": "amber", "title": "Powerman (Formula S External Power Supply)", "items": [
