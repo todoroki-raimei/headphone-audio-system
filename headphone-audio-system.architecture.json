@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "Home Headphone Audio System",
+    "title": "Headphone Audio System Diagram",
     "output": "output.html",
     "locale": "en",
     "visual_preset": "signal-flow",
