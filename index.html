@@ -4846,6 +4846,119 @@
       .source-evidence-beacon,
       svg [data-node-id], svg [data-edge-from], svg [data-detail], svg [data-detail-anchor], svg [data-legend-hit], svg { transition: none !important; }
     }
+    /* Audio path layer selector */
+    .audio-layer-switcher {
+      display: grid;
+      grid-template-columns: minmax(10rem, 0.42fr) minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: center;
+      margin: 0 0 0.65rem;
+      padding: 0.72rem 0.85rem;
+      border: 1px solid var(--toolbar-border);
+      border-radius: 0.8rem;
+      background: var(--toolbar-bg);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+    }
+    .audio-layer-copy {
+      min-width: 0;
+      display: grid;
+      gap: 0.18rem;
+    }
+    .audio-layer-eyebrow {
+      color: var(--frontend-stroke);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    .audio-layer-note {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+    .audio-layer-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.4rem;
+    }
+    .audio-layer-button {
+      min-height: 2.35rem;
+      padding: 0.45rem 0.68rem;
+      border: 1px solid var(--toolbar-border);
+      border-radius: 0.58rem;
+      background: color-mix(in srgb, var(--toolbar-bg) 82%, transparent);
+      color: var(--text-muted);
+      font: inherit;
+      font-size: 0.68rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 150ms ease, color 150ms ease, background 150ms ease, transform 150ms ease;
+    }
+    .audio-layer-button:hover,
+    .audio-layer-button:focus-visible {
+      color: var(--text);
+      border-color: var(--frontend-stroke);
+      transform: translateY(-1px);
+    }
+    .audio-layer-button[aria-pressed="true"] {
+      color: #ffffff;
+      border-color: var(--layer-accent, var(--frontend-stroke));
+      background: color-mix(in srgb, var(--layer-accent, var(--frontend-stroke)) 20%, var(--toolbar-bg));
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--layer-accent, var(--frontend-stroke)) 36%, transparent),
+                  0 0 20px color-mix(in srgb, var(--layer-accent, var(--frontend-stroke)) 18%, transparent);
+    }
+    .audio-layer-button[data-audio-layer="physical"] { --layer-accent: #c7d4e5; }
+    .audio-layer-button[data-audio-layer="naa-mac"] { --layer-accent: #67e8f9; }
+    .audio-layer-button[data-audio-layer="naa-g1"] { --layer-accent: #7bffe5; }
+    .audio-layer-button[data-audio-layer="streaming"] { --layer-accent: #d8ccff; }
+    .audio-layer-button[data-audio-layer="all"] { --layer-accent: #ffe38a; }
+
+    .diagram-container svg [data-node-id],
+    .diagram-container svg [data-edge-id] {
+      transition: opacity 180ms ease, filter 180ms ease, stroke-width 180ms ease;
+    }
+    html[data-audio-layer="naa-mac"] { --arrow-emphasis: #67e8f9; }
+    html[data-audio-layer="naa-g1"] { --arrow-emphasis: #7bffe5; }
+    html[data-audio-layer="streaming"] { --arrow-emphasis: #d8ccff; }
+    html[data-audio-layer="naa-mac"] .diagram-container svg [data-node-id],
+    html[data-audio-layer="naa-mac"] .diagram-container svg [data-edge-id],
+    html[data-audio-layer="naa-g1"] .diagram-container svg [data-node-id],
+    html[data-audio-layer="naa-g1"] .diagram-container svg [data-edge-id],
+    html[data-audio-layer="streaming"] .diagram-container svg [data-node-id],
+    html[data-audio-layer="streaming"] .diagram-container svg [data-edge-id] {
+      opacity: 0.13 !important;
+    }
+    html[data-audio-layer="naa-mac"] .diagram-container svg :is(#node-src, #node-macmini, #node-crs305, #node-optmod, #node-red),
+    html[data-audio-layer="naa-mac"] .diagram-container svg [data-edge-id="src-macmini"],
+    html[data-audio-layer="naa-mac"] .diagram-container svg [data-edge-id="macmini-crs305"],
+    html[data-audio-layer="naa-mac"] .diagram-container svg [data-edge-id="crs305-optmod"],
+    html[data-audio-layer="naa-mac"] .diagram-container svg [data-edge-id="optmod-red"],
+    html[data-audio-layer="naa-g1"] .diagram-container svg :is(#node-hpq, #node-crs305, #node-optmod, #node-red),
+    html[data-audio-layer="naa-g1"] .diagram-container svg [data-edge-id="crs305-hpq"],
+    html[data-audio-layer="naa-g1"] .diagram-container svg [data-edge-id="crs305-optmod"],
+    html[data-audio-layer="naa-g1"] .diagram-container svg [data-edge-id="optmod-red"],
+    html[data-audio-layer="streaming"] .diagram-container svg :is(#node-src, #node-crs305, #node-optmod, #node-red),
+    html[data-audio-layer="streaming"] .diagram-container svg [data-edge-id="crs305-optmod"],
+    html[data-audio-layer="streaming"] .diagram-container svg [data-edge-id="optmod-red"] {
+      opacity: 1 !important;
+    }
+    html[data-audio-layer="naa-mac"] .diagram-container svg path[data-edge-id="src-macmini"],
+    html[data-audio-layer="naa-mac"] .diagram-container svg path[data-edge-id="macmini-crs305"],
+    html[data-audio-layer="naa-mac"] .diagram-container svg path[data-edge-id="crs305-optmod"],
+    html[data-audio-layer="naa-mac"] .diagram-container svg path[data-edge-id="optmod-red"],
+    html[data-audio-layer="naa-g1"] .diagram-container svg path[data-edge-id="crs305-hpq"],
+    html[data-audio-layer="naa-g1"] .diagram-container svg path[data-edge-id="crs305-optmod"],
+    html[data-audio-layer="naa-g1"] .diagram-container svg path[data-edge-id="optmod-red"],
+    html[data-audio-layer="streaming"] .diagram-container svg path[data-edge-id="crs305-optmod"],
+    html[data-audio-layer="streaming"] .diagram-container svg path[data-edge-id="optmod-red"] {
+      stroke-width: 3.4 !important;
+      filter: drop-shadow(0 0 5px currentColor);
+    }
+    @media (max-width: 900px) {
+      .audio-layer-switcher { grid-template-columns: 1fr; }
+      .audio-layer-options { justify-content: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -5000,6 +5113,21 @@
         <ol class="guided-view-chapters" id="guided-view-chapters"></ol>
       </nav>
     </div>
+
+    <section class="audio-layer-switcher no-print" aria-label="Audio path layers">
+      <div class="audio-layer-copy">
+        <span class="audio-layer-eyebrow">Path layers</span>
+        <strong id="audio-layer-title">Physical topology</strong>
+        <small class="audio-layer-note" id="audio-layer-note">The RED has one physical input: optically isolated LAN from opticalModule.</small>
+      </div>
+      <div class="audio-layer-options" role="group" aria-label="Choose a physical or protocol layer">
+        <button class="audio-layer-button" type="button" data-audio-layer="physical" aria-pressed="true">Physical</button>
+        <button class="audio-layer-button" type="button" data-audio-layer="naa-mac" aria-pressed="false">NAA · Mac mini</button>
+        <button class="audio-layer-button" type="button" data-audio-layer="naa-g1" aria-pressed="false">NAA · G1 Pro</button>
+        <button class="audio-layer-button" type="button" data-audio-layer="streaming" aria-pressed="false">AirPlay 2 / Qobuz</button>
+        <button class="audio-layer-button" type="button" data-audio-layer="all" aria-pressed="false">All layers</button>
+      </div>
+    </section>
 
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
@@ -14925,6 +15053,58 @@
         Archify.presentation.exit();
       }
     });
+  </script>
+  <script>
+    (function () {
+      var layers = {
+        physical: {
+          title: 'Physical topology',
+          note: 'The RED has one physical input: optically isolated LAN from opticalModule.'
+        },
+        'naa-mac': {
+          title: 'NAA · Mac mini',
+          note: 'HQPlayer 6 on the Mac mini reaches the RED over the shared CRS305 → opticalModule LAN path.'
+        },
+        'naa-g1': {
+          title: 'NAA · G1 Pro',
+          note: 'HQPlayer 5 on the G1 Pro reaches the RED over the same CRS305 → opticalModule LAN path.'
+        },
+        streaming: {
+          title: 'AirPlay 2 / Qobuz Connect',
+          note: 'Internet streaming enters through the router and uses the same CRS305 → opticalModule path; the Mac mini provides control only.'
+        },
+        all: {
+          title: 'All layers',
+          note: 'One physical optical LAN carries three logical routes: NAA (Mac mini), NAA (G1 Pro), and AirPlay 2 / Qobuz Connect.'
+        }
+      };
+      var buttons = Array.from(document.querySelectorAll('[data-audio-layer]'));
+      var title = document.getElementById('audio-layer-title');
+      var note = document.getElementById('audio-layer-note');
+      function applyLayer(mode) {
+        if (!layers[mode]) mode = 'physical';
+        document.documentElement.setAttribute('data-audio-layer', mode);
+        buttons.forEach(function (button) {
+          button.setAttribute('aria-pressed', button.getAttribute('data-audio-layer') === mode ? 'true' : 'false');
+        });
+        if (title) title.textContent = layers[mode].title;
+        if (note) note.textContent = layers[mode].note;
+        try { localStorage.setItem('headphone-audio-layer', mode); } catch (_) {}
+      }
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          applyLayer(button.getAttribute('data-audio-layer'));
+        });
+      });
+      var initial = 'physical';
+      try {
+        var requested = new URLSearchParams(window.location.search).get('layer');
+        var saved = localStorage.getItem('headphone-audio-layer');
+        if (layers[requested]) initial = requested;
+        else if (layers[saved]) initial = saved;
+      } catch (_) {}
+      applyLayer(initial);
+    })();
   </script>
 </body>
 </html>
