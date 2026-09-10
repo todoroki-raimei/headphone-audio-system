@@ -9,7 +9,7 @@
     "quality_profile": "showcase",
     "viewBox": [1320, 760],
     "views": [
-      { "id": "digital-path", "label": "Digital Signal Path", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Digital path from the Mac mini through the CRS305, branching to HPQOnly and the RED/DAC chain" },
+      { "id": "digital-path", "label": "Digital Signal Path", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Digital path from the Mac mini through the CRS305, branching to G1 Pro and the RED/DAC chain" },
       { "id": "bypass-route", "label": "Bypass Route", "focus": ["src", "red"], "note": "The RED receives Qobuz or Apple Music directly via AirPlay 2 or Qobuz Connect; the Mac mini provides control only" },
       { "id": "analog-path", "label": "Analog Output Path", "focus": ["spring3", "formulas", "powerman", "headphones"], "note": "Analog path from the DAC through the headphone amplifier to the headphones" }
     ]
@@ -55,7 +55,7 @@
       "Output: LAN → CRS305 (via Router)",
       "Power: Supplied AC"
     ] },
-    { "dot": "cyan", "title": "MINISFORUM Atomman G1 Pro (HPQOnly)", "items": [
+    { "dot": "cyan", "title": "MINISFORUM Atomman G1 Pro", "items": [
       "Role: Dedicated HQPlayer 5 Desktop Machine",
       "Detail: CUDA Processing on RTX 5060 (8GB)",
       "Input/Output: LAN ↔ CRS305 (FCLF8521P2BTL Copper SFP / Bidirectional)",
@@ -63,7 +63,7 @@
     ] },
     { "dot": "violet", "title": "Optical Isolation Layer", "items": [
       "MikroTik CRS305 (SFP Switch)",
-      "↔ FCLF8521P2BTL (Copper SFP / RJ45) ↔ HPQOnly (Outside Cluster / Bidirectional)",
+      "↔ FCLF8521P2BTL (Copper SFP / RJ45) ↔ G1 Pro (Outside Cluster / Bidirectional)",
       "→ FTLF8519P3BNL (Optical SFP) → Optical Fiber → opticalModule",
       "SONORE opticalModule Deluxe V3 (Media Converter / Powered by iPower2)"
     ] },
