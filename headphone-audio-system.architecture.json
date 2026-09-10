@@ -9,8 +9,7 @@
     "quality_profile": "showcase",
     "viewBox": [1320, 760],
     "views": [
-      { "id": "digital-path", "label": "Digital Signal Path", "focus": ["macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "Digital path from the Mac mini through the CRS305, branching to G1 Pro and the RED/DAC chain" },
-      { "id": "bypass-route", "label": "Bypass Route", "focus": ["src", "red"], "note": "The RED receives Qobuz or Apple Music directly via AirPlay 2 or Qobuz Connect; the Mac mini provides control only" },
+      { "id": "digital-path", "label": "Digital Signal Path", "focus": ["src", "macmini", "crs305", "hpq", "optmod", "red", "spring3"], "note": "NAA (Mac mini), NAA (G1 Pro), and AirPlay 2 / Qobuz Connect share one optically isolated LAN path to the RED" },
       { "id": "analog-path", "label": "Analog Output Path", "focus": ["spring3", "formulas", "powerman", "headphones"], "note": "Analog path from the DAC through the headphone amplifier to the headphones" }
     ]
   },
@@ -22,7 +21,7 @@
     { "id": "crs305", "type": "cloud", "label": "MikroTik CRS305", "sublabel": "SFP Switch", "pos": [640, 70], "size": [150, 70] },
     { "id": "optmod", "type": "cloud", "label": "SONORE opticalModule Deluxe V3", "sublabel": "Media Converter", "tag": "Powered by iPower2", "pos": [640, 240], "size": [260, 70] },
 
-    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "Network Transport (RedOS)", "tag": "NAA / AirPlay 2 / Qobuz Connect", "pos": [300, 480], "size": [190, 120] },
+    { "id": "red", "type": "backend", "label": "Holo Audio RED", "sublabel": "Network Transport (RedOS)", "tag": "3 Protocol Routes", "pos": [300, 480], "size": [190, 120] },
     { "id": "spring3", "type": "backend", "label": "Holo Audio Spring 3 KTE", "sublabel": "Fully Discrete R2R DAC", "tag": "AET EVO-1302S / PB-350 High Bank", "pos": [570, 460], "size": [200, 160] },
     { "id": "formulas", "type": "backend", "label": "XI Audio Formula S", "sublabel": "Headphone Amplifier", "tag": "Class A / Discrete BJT / Dual Mono", "pos": [840, 460], "size": [200, 160] },
     { "id": "powerman", "type": "backend", "label": "Powerman", "sublabel": "Toroidal / Discrete Power Supply", "tag": "ZONOTONE 6NPS-3.5 MEISTER", "pos": [840, 660], "size": [200, 65] },
@@ -35,10 +34,9 @@
   "connections": [
     { "id": "src-macmini", "from": "src", "to": "macmini", "label": "Internet", "variant": "emphasis" },
     { "id": "macmini-crs305", "from": "macmini", "to": "crs305", "label": "LAN (via Router)", "variant": "emphasis" },
-    { "id": "src-red-bypass", "from": "src", "to": "red", "label": "Direct Internet (AirPlay 2 / Qobuz Connect)", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
     { "id": "crs305-hpq", "from": "crs305", "to": "hpq", "label": "LAN ↔ FCLF8521P2BTL", "variant": "emphasis" },
     { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "Optical Fiber (FTLF8519P3BNL SFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
-    { "id": "optmod-red", "from": "optmod", "to": "red", "label": "LAN", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "optmod-red", "from": "optmod", "to": "red", "label": "Optically Isolated LAN", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "fromSide": "top", "toSide": "top" },
     { "id": "spring3-formulas", "from": "spring3", "to": "formulas", "label": "RCA (Wireworld Silver Eclipse 10)", "variant": "default", "fromSide": "top", "toSide": "top" },
     { "id": "powerman-formulas", "from": "powerman", "to": "formulas", "label": "Power Supply", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "straight" },
@@ -47,7 +45,7 @@
   "cards": [
     { "dot": "slate", "title": "Qobuz / Apple Music", "items": [
       "Role: Streaming Source",
-      "Output: Mac mini (Internet) / Direct to RED (AirPlay 2 / Qobuz Connect)"
+      "Output: Mac mini (Internet)"
     ] },
     { "dot": "cyan", "title": "Mac mini M4 Pro", "items": [
       "Role: Roon Core / HQPlayer 6 Desktop",
@@ -65,13 +63,14 @@
       "MikroTik CRS305 (SFP Switch)",
       "↔ FCLF8521P2BTL (Copper SFP / RJ45) ↔ G1 Pro (Outside Cluster / Bidirectional)",
       "→ FTLF8519P3BNL (Optical SFP) → Optical Fiber → opticalModule",
-      "SONORE opticalModule Deluxe V3 (Media Converter / Powered by iPower2)"
+      "SONORE opticalModule Deluxe V3 (Media Converter / Powered by iPower2)",
+      "One physical LAN path carries 3 routes: NAA (Mac mini), NAA (G1 Pro), AirPlay 2 / Qobuz Connect"
     ] },
     { "dot": "emerald", "title": "Holo Audio RED", "items": [
       "Role: Network Transport",
-      "Detail: RedOS / NAA HQPlayer / AirPlay 2 / Qobuz Connect",
-      "Input 1: LAN (via opticalModule / NAA)",
-      "Input 2: Direct Internet (AirPlay 2 / Qobuz Connect)",
+      "Detail: RedOS",
+      "Physical Input: LAN (via opticalModule / Optically Isolated)",
+      "Protocol Routes: NAA (Mac mini) / NAA (G1 Pro) / AirPlay 2 / Qobuz Connect",
       "Output: I2S (TOP WING Ultra Slim I2S)",
       "Power: KRYNA Acca5-L / via PB-350 Low Bank"
     ] },
