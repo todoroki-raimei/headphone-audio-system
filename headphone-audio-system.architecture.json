@@ -34,7 +34,8 @@
   "connections": [
     { "id": "src-macmini", "from": "src", "to": "macmini", "label": "Internet", "variant": "emphasis" },
     { "id": "macmini-crs305", "from": "macmini", "to": "crs305", "label": "LAN (via Router)", "variant": "emphasis" },
-    { "id": "crs305-hpq", "from": "crs305", "to": "hpq", "label": "LAN ↔ FCLF8521P2BTL", "variant": "emphasis" },
+    { "id": "crs305-hpq", "from": "crs305", "to": "hpq", "label": "LAN (FCLF8521P2BTL)", "variant": "emphasis" },
+    { "id": "hpq-crs305", "from": "hpq", "to": "crs305", "label": "LAN / NAA", "variant": "emphasis" },
     { "id": "crs305-optmod", "from": "crs305", "to": "optmod", "label": "Optical Fiber (FTLF8519P3BNL SFP)", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "optmod-red", "from": "optmod", "to": "red", "label": "Optically Isolated LAN", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
     { "id": "red-spring3", "from": "red", "to": "spring3", "label": "I2S (TOP WING Ultra Slim I2S)", "variant": "emphasis", "fromSide": "top", "toSide": "top" },
